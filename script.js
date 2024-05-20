@@ -2,21 +2,21 @@ const maxNumberCount = 100;
 let numberCount = 0;
 let intervalId;
 
-document.getElementById('press-me-button').addEventListener('click', function() {
-    console.log('Button pressed');
-    document.getElementById('congrats-message').style.display = 'block';
+document.getElementById('red-pill-button').addEventListener('click', function() {
+    console.log('Red pill button pressed');
+    document.getElementById('congrats-message').textContent = 'Wrong choice You Fuckin idiot! Try again dumb fuck.';
     document.getElementById('matrix-sound').play();
-    
-    intervalId = setInterval(() => {
-        if (numberCount < maxNumberCount) {
-            createNumber();
-        }
-    }, 100); // Create a new number every 100ms
+    startMatrixEffect();
+});
+
+document.getElementById('blue-pill-button').addEventListener('click', function() {
+    console.log('Blue pill button pressed');
+    alert('Congratulations Palumbo! You are now out of the Matrix!');
 });
 
 document.getElementById('reset-button').addEventListener('click', function() {
     console.log('Reset button pressed');
-    document.getElementById('congrats-message').style.display = 'none';
+    document.getElementById('congrats-message').textContent = 'Choose your fate';
     const matrixContainer = document.getElementById('matrix-container');
     while (matrixContainer.firstChild) {
         matrixContainer.removeChild(matrixContainer.firstChild);
@@ -24,6 +24,14 @@ document.getElementById('reset-button').addEventListener('click', function() {
     numberCount = 0;
     clearInterval(intervalId);
 });
+
+function startMatrixEffect() {
+    intervalId = setInterval(() => {
+        if (numberCount < maxNumberCount) {
+            createNumber();
+        }
+    }, 100); // Create a new number every 100ms
+}
 
 function createNumber() {
     console.log('Creating number');
