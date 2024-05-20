@@ -1,13 +1,17 @@
 const maxNumberCount = 100;
 let numberCount = 0;
+let intervalId;
 
 document.getElementById('press-me-button').addEventListener('click', function() {
     console.log('Button pressed');
     document.getElementById('congrats-message').style.display = 'block';
     document.getElementById('matrix-sound').play();
-    for (let i = 0; i < maxNumberCount; i++) {
-        createNumber();
-    }
+    
+    intervalId = setInterval(() => {
+        if (numberCount < maxNumberCount) {
+            createNumber();
+        }
+    }, 100); // Create a new number every 100ms
 });
 
 document.getElementById('reset-button').addEventListener('click', function() {
@@ -18,11 +22,10 @@ document.getElementById('reset-button').addEventListener('click', function() {
         matrixContainer.removeChild(matrixContainer.firstChild);
     }
     numberCount = 0;
+    clearInterval(intervalId);
 });
 
 function createNumber() {
-    if (numberCount >= maxNumberCount) return;
-
     console.log('Creating number');
 
     const number = document.createElement('div');
@@ -50,5 +53,5 @@ function createNumber() {
             numberCount--;
             console.log('Number removed');
         }, 500); // Wait for the fade-out transition to complete
-    }, 5000); // Extended duration for the numbers to fall the full length
+    }, 5000); // Duration for the numbers to fall the full length
 }
