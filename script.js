@@ -30,10 +30,8 @@ function createNumber() {
 
     number.textContent = Math.floor(Math.random() * 10);
 
-    const fallSpeed = Math.random() < 0.5 ? 'matrix-fall' : 'matrix-fall-slow';
-    number.style.animationName = fallSpeed;
-
     number.style.left = Math.random() * 100 + 'vw';
+    number.style.top = -Math.random() * 100 + 'vh';
     document.getElementById('matrix-container').appendChild(number);
 
     console.log('Number added to container');
