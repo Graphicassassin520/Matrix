@@ -11,11 +11,10 @@ body {
 }
 
 #congrats-message {
-    display: none;
     font-size: 24px;
     font-weight: bold;
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
     color: #00FF00; /* Bright green */
     text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 80px #00FF00;
 }
@@ -34,7 +33,28 @@ body {
 #button-container {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     gap: 10px;
+}
+
+.pill {
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px; /* Oval shape */
+    color: white;
+    width: 150px;
+    text-align: center;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
 }
 
 .number {
@@ -58,16 +78,14 @@ body {
     }
 }
 
-button {
-    background-color: red;
+#reset-button {
+    background-color: gray;
     color: white;
     border: none;
     padding: 15px 30px;
     font-size: 16px;
     cursor: pointer;
     border-radius: 5px;
-}
-
-#reset-button {
-    background-color: gray;
+    position: absolute;
+    bottom: 20px;
 }
