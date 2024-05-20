@@ -16,6 +16,8 @@ body {
     font-weight: bold;
     text-align: center;
     margin-top: 20px;
+    color: #00FF00; /* Bright green */
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 80px #00FF00;
 }
 
 #matrix-container {
@@ -26,7 +28,7 @@ body {
     height: 100%;
     pointer-events: none;
     overflow: hidden;
-    color: green;
+    color: #00FF00; /* Bright green */
 }
 
 #button-container {
@@ -41,6 +43,8 @@ body {
     animation: matrix-fall 5s linear infinite;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
+    color: #00FF00; /* Bright green */
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 20px #00FF00, 0 0 40px #00FF00, 0 0 80px #00FF00;
 }
 
 @keyframes matrix-fall {
