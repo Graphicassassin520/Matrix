@@ -2,6 +2,7 @@ const maxConfettiCount = 100;
 let confettiCount = 0;
 
 document.getElementById('press-me-button').addEventListener('click', function() {
+    console.log('Button pressed');
     document.getElementById('congrats-message').style.display = 'block';
     document.getElementById('confetti-sound').play();
     for (let i = 0; i < maxConfettiCount; i++) {
@@ -10,6 +11,7 @@ document.getElementById('press-me-button').addEventListener('click', function() 
 });
 
 document.getElementById('reset-button').addEventListener('click', function() {
+    console.log('Reset button pressed');
     document.getElementById('congrats-message').style.display = 'none';
     const confettiContainer = document.getElementById('confetti-container');
     while (confettiContainer.firstChild) {
@@ -20,6 +22,8 @@ document.getElementById('reset-button').addEventListener('click', function() {
 
 function createConfetti() {
     if (confettiCount >= maxConfettiCount) return;
+
+    console.log('Creating confetti');
 
     const confetti = document.createElement('div');
     confetti.classList.add('confetti');
@@ -39,6 +43,8 @@ function createConfetti() {
     confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
     document.getElementById('confetti-container').appendChild(confetti);
 
+    console.log('Confetti added to container');
+
     // Trigger the transition by forcing reflow and setting opacity to 1
     requestAnimationFrame(() => {
         confetti.style.opacity = 1;
@@ -51,6 +57,7 @@ function createConfetti() {
         setTimeout(() => {
             confetti.remove();
             confettiCount--;
+            console.log('Confetti removed');
         }, 500); // Wait for the fade-out transition to complete
     }, 3000);
 }
