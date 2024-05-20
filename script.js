@@ -4,14 +4,15 @@ let intervalId;
 
 document.getElementById('red-pill-button').addEventListener('click', function() {
     console.log('Red pill button pressed');
-    document.getElementById('congrats-message').textContent = 'Wrong choice You Fuckin idiot! Try again dumb fuck.';
-    document.getElementById('matrix-sound').play();
-    startMatrixEffect();
+    document.getElementById('congrats-message').textContent = 'Wrong choice. Try again.';
+    document.getElementById('wrong-choice-sound').play();
 });
 
 document.getElementById('blue-pill-button').addEventListener('click', function() {
     console.log('Blue pill button pressed');
-    alert('Congratulations Palumbo! You are now out of the Matrix!');
+    document.getElementById('congrats-message').textContent = 'Congratulations Palumbo! You are now out of the Matrix!';
+    document.getElementById('matrix-sound').play();
+    startMatrixEffect();
 });
 
 document.getElementById('reset-button').addEventListener('click', function() {
