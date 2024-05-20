@@ -31,7 +31,7 @@ function createNumber() {
     number.textContent = Math.floor(Math.random() * 10);
 
     number.style.left = Math.random() * 100 + 'vw';
-    number.style.top = -Math.random() * 100 + 'vh';
+    number.style.top = -Math.random() * 20 + 'vh';
     document.getElementById('matrix-container').appendChild(number);
 
     console.log('Number added to container');
@@ -50,5 +50,5 @@ function createNumber() {
             numberCount--;
             console.log('Number removed');
         }, 500); // Wait for the fade-out transition to complete
-    }, 3000);
+    }, 5000); // Extended duration for the numbers to fall the full length
 }
