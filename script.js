@@ -4,7 +4,7 @@ let intervalId;
 
 document.getElementById('red-pill-button').addEventListener('click', function() {
     console.log('Red pill button pressed');
-    document.getElementById('congrats-message').textContent = 'Wrong choice. Try again.';
+    document.getElementById('congrats-message').textContent = 'Wrong choice Dumb Fuck. Try again you Fuckin Retard.';
     const wrongChoiceSound = document.getElementById('wrong-choice-sound');
     if (wrongChoiceSound) {
         wrongChoiceSound.play().catch((error) => {
